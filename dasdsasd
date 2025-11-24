@@ -3849,9 +3849,6 @@ function notifications:fade(path, is_fading)
 end 
 
 
-local function getgui()
-    return game:GetService("CoreGui")
-end
 
 function notifications:create_notification(options)
     local cfg = {
@@ -3861,7 +3858,7 @@ function notifications:create_notification(options)
     }
     
     local outline = library:create("Frame", {
-        Parent = getgui();
+        Parent = lp:WaitForChild("PlayerGui");
         Size = dim2(0, 0, 0, 0);
         BorderColor3 = rgb(0, 0, 0);
         BorderSizePixel = 0;
